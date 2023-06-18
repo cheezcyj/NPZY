@@ -1,4 +1,4 @@
-package com.pcwk.ehr.user.service;
+package com.pcwk.ehr.noMember;
 
 public class UserServiceImpl {
 
