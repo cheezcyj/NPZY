@@ -1,4 +1,4 @@
-package com.pcwk.ehr.noMember;
+package com.pcwk.ehr.NoMember;
 
 public class UserDaoImpl {
 
