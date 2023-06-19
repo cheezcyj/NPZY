@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="css/list.css" />
+<link rel="stylesheet" href="css/button.css" />
+<link rel="stylesheet" href="css/form.css" />
+</head>
+<body>
+  <div class="page-title">
+    <h2>자유 게시판</h2>
+  </div>
+	<!-- Button영역 -->
+	<div class="container">
+		<div class="button-area">
+				<input type="button" class="pc_button" value="목록" /> 
+				<input type="button" class="pc_button" value="등록" onclick="doInsert();" />
+		</div>
+	</div>
+	<!--// Button영역 -->
+
+		<form action="/WEB_H01/board/board.do" method="post" id="regFrm" class="container"
+			name="regFrm">
+			<input type="hidden" name="word_div" value="" />
+			<!-- 제목 -->
+			<div  class="form-group">
+				<label for="title">제목</label> 
+				<input  type="text"  maxlength="1000" name="title" id="title" placeholder="제목" />
+			</div>         
+
+			<!-- 등록자 -->
+			<div   class="form-group">
+				<label for="reg_id">등록자</label> <input type="text" maxlength="12"
+					placeholder="등록자" name="reg_id" id="reg_id" />
+			</div>
+			<!--// 등록자 -->
+
+			<!-- 내용 -->
+			<div class="form-group">
+				<label for="contents">내용</label>
+				<textarea rows="5" cols="20" name="contents" id="contents"></textarea>
+			</div>
+			<!--// 내용 -->
+		</form>
+</body>
+</html>
