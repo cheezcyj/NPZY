@@ -6,6 +6,6 @@ import com.pcwk.ehr.anno.domain.AnnoVO;
 
 public interface NotMemberService {
 		
-	public NotMemberVO doSelectOne(AnnoVO inVO) throws SQLException;
+    void saveUserInfo(String mbti, String nickname, String gender, String zodiac);
 		
 }

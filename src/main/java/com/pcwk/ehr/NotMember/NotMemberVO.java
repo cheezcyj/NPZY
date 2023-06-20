@@ -1,15 +1,13 @@
 package com.pcwk.ehr.NotMember;
 
 public class NotMemberVO {
-
     private String mbti;
     private String nickname;
     private String gender;
-    private String ani;
+    private String zodiac;
 
-    // 생성자, getter 및 setter 생략
+    // Getter and Setter methods
 
-    // 각 필드의 getter 및 setter
     public String getMbti() {
         return mbti;
     }
@@ -34,19 +32,11 @@ public class NotMemberVO {
         this.gender = gender;
     }
 
-    public String getAni() {
-        return ani;
+    public String getZodiac() {
+        return zodiac;
     }
 
-    public void setAni(String zodiac) {
-        this.ani = ani;
+    public void setZodiac(String zodiac) {
+        this.zodiac = zodiac;
     }
-
-	@Override
-	public String toString() {
-		return "NotMemberVO [mbti=" + mbti + ", nickname=" + nickname + ", gender=" + gender + ", ani=" + ani
-				+ ", toString()=" + super.toString() + "]";
-	}
-    
-    
 }

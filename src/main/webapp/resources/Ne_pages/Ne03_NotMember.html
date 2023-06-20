@@ -2,6 +2,27 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script>
+function submitForm() {
+    var mbti = document.getElementById("mbti").value;
+    var nickname = document.getElementById("nickname").value;
+    var gender = document.querySelector('input[name="gender"]:checked').value;
+    var zodiac = document.getElementById("zodiac").value;
+    
+    if (mbti === "" || nickname === "" || gender === "" || zodiac === "") {
+        alert("입력되지 않은 정보가 있습니다. 모든 항목을 입력해주세요.");
+        return false;
+    }
+    
+    var result = confirm("입력한 정보를 전송하시겠습니까?");
+    if (result) {
+        // 정보 전송을 위한 AJAX 요청 등의 처리
+        return true;
+    } else {
+        return false;
+    }
+}
+</script>
 <style id="fullpage_styles">
 @font-face {
   font-family: 'Cafe24Dongdong';
@@ -57,12 +78,11 @@ button {
 }
 </style>
 </head>
-<body id="tinymce" class="mce-content-body" data-id="content"
-  contenteditable="true" spellcheck="false">
+<body>
   <h2 style="text-align: center;">MBTI를 입력하세요</h2>
   <div style="text-align: center;">
-    <form>
-      <select name="mbti">
+    <form onsubmit="return submitForm()">
+      <select id="mbti" name="mbti">
         <option style="text-align: center;" value="none">=== 선택 ===</option>
         <option value="ISTJ">ISTJ</option>
         <option value="ISTP">ISTP</option>
@@ -85,17 +105,17 @@ button {
   </div>
   <h2 style="text-align: center;">닉네임을 입력하세요</h2>
   <div style="text-align: center;">
-    <input class="name" maxlength="30" required="" size="10" type="text" />
+    <input id="nickname" class="name" maxlength="30" required="" size="10" type="text" />
   </div>
   <h2 style="text-align: center;">성별을 입력하세요</h2>
   <div style="text-align: center;">
-    <input name="gender1" type="radio" /> 남자 <input name="gender1"
-      type="radio" /> 여자
+    <input name="gender" value="남자" type="radio" /> 남자
+    <input name="gender" value="여자" type="radio" /> 여자
   </div>
   <h2 style="text-align: center;">띠를 입력하세요</h2>
   <div style="text-align: center;">
     <form>
-      <select name="mbti">
+      <select id="zodiac" name="zodiac">
         <option style="text-align: center;" value="none">=== 선택 ===</option>
         <option value="mouse">쥐띠</option>
         <option value="cow">소띠</option>
