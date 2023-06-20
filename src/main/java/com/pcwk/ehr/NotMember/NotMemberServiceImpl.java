@@ -10,13 +10,12 @@ public class NotMemberServiceImpl implements NotMemberService {
         this.notMemberDAO = notMemberDAO;
     }
 
-    @Override
-    public void saveUserInfo(String mbti, String nickname, String gender, String zodiac) {
+    public void saveUserInfo(String mbti, String nickname, String gender, String ani) {
         NotMemberVO notMember = new NotMemberVO();
         notMember.setMbti(mbti);
         notMember.setNickname(nickname);
         notMember.setGender(gender);
-        notMember.setZodiac(zodiac);
+        notMember.setAni(ani);
 
         notMemberDAO.save(notMember);
     }

@@ -6,7 +6,7 @@ import org.apache.ibatis.annotations.Select;
 public interface NotMemberMapper {
 
     @Insert("INSERT INTO not_member (mbti, nickname, gender, zodiac) " +
-            "VALUES (#{mbti}, #{nickname}, #{gender}, #{zodiac})")
+            "VALUES (#{mbti}, #{nickname}, #{gender}, #{ani})")
     void saveNotMemberInfo(NotMemberVO notMemberVO);
     
     @Select("SELECT * FROM not_member WHERE nickname = #{nickname}")

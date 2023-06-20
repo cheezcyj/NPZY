@@ -11,7 +11,7 @@
         var gender = document.querySelector('input[name="gender"]:checked').value;
         var zodiac = document.getElementById("zodiac").value;
 
-        if (mbti === "mbti" || nickname === "닉네임" || gender === "성별" || zodiac === "띠") {
+        if (mbti === "none" || nickname === "" || gender === "" || zodiac === "none") {
             alert("입력되지 않은 정보가 있습니다. 모든 항목을 입력해주세요.");
             return false;
         }
@@ -102,20 +102,12 @@ button {
         <option value="ENFJ">ENFJ</option>
         <option value="ENFP">ENFP</option>
       </select>
-    </form>
-  </div>
-  <h2 style="text-align: center;">닉네임을 입력하세요</h2>
-  <div style="text-align: center;">
-    <input id="nickname" class="name" maxlength="30" required="" size="10" type="text" />
-  </div>
-  <h2 style="text-align: center;">성별을 입력하세요</h2>
-  <div style="text-align: center;">
-    <input name="gender" value="남자" type="radio" /> 남자
-    <input name="gender" value="여자" type="radio" /> 여자
-  </div>
-  <h2 style="text-align: center;">띠를 입력하세요</h2>
-  <div style="text-align: center;">
-    <form>
+      <h2 style="text-align: center;">닉네임을 입력하세요</h2>
+      <input id="nickname" class="name" maxlength="30" required="" size="10" type="text" />
+      <h2 style="text-align: center;">성별을 입력하세요</h2>
+      <input name="gender" value="남자" type="radio" /> 남자
+      <input name="gender" value="여자" type="radio" /> 여자
+      <h2 style="text-align: center;">띠를 입력하세요</h2>
       <select id="zodiac" name="zodiac">
         <option style="text-align: center;" value="none">=== 선택 ===</option>
         <option value="mouse">쥐띠</option>
@@ -131,11 +123,11 @@ button {
         <option value="dog">개띠</option>
         <option value="pig">돼지띠</option>
       </select>
+      <h2 style="text-align: center;">현재(서버시간)의 네 팔자야</h2>
+      <div style="text-align: center;">
+        <button class="config" type="button" onclick="submitForm()">운세 확인</button>
+      </div>
     </form>
-  </div>
-  <h2 style="text-align: center;">현재(서버시간)의 네 팔자야</h2>
-  <div style="text-align: center;">
-    <button class="config" type="submit">운세 확인</button>
   </div>
 </body>
 </html>

@@ -9,7 +9,7 @@ function submitForm() {
     var gender = document.querySelector('input[name="gender"]:checked').value;
     var zodiac = document.getElementById("zodiac").value;
     
-    if (mbti === "" || nickname === "" || gender === "" || zodiac === "") {
+    if (mbti === "mbti" || nickname === "닉네임" || gender === "성별" || ani === "띠") {
         alert("입력되지 않은 정보가 있습니다. 모든 항목을 입력해주세요.");
         return false;
     }
@@ -70,8 +70,6 @@ button {
   color: black;
   padding: 15px 128px;
   text-align: center;
-  text-decoration: none;
-  display: inline-block;
   font-size: 16px;
   border-radius: 5px;
   margin: 4px 2px;

@@ -1,9 +1,8 @@
 package com.pcwk.ehr.NotMember;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
@@ -15,25 +14,25 @@ public class NotMemberController {
         this.notMemberService = notMemberService;
     }
 
-    @GetMapping("/")
+    @RequestMapping(value = "/", method = RequestMethod.GET)
     public String showForm() {
         return "input-form";
     }
 
-    @PostMapping("/submit")
+    @RequestMapping(value = "/submit", method = RequestMethod.POST)
     public String submitForm(
             @RequestParam("mbti") String mbti,
             @RequestParam("nickname") String nickname,
             @RequestParam("gender") String gender,
-            @RequestParam("zodiac") String zodiac,
+            @RequestParam("ani") String ani,
             Model model
     ) {
-        notMemberService.saveUserInfo(mbti, nickname, gender, zodiac);
+        notMemberService.saveUserInfo(mbti, nickname, gender, "ani");
 
         model.addAttribute("mbti", mbti);
         model.addAttribute("nickname", nickname);
         model.addAttribute("gender", gender);
-        model.addAttribute("zodiac", zodiac);
+        model.addAttribute("ani", "ani");
 
         return "result-page";
     }

@@ -13,7 +13,7 @@ public class NotMemberDAOImpl implements NotMemberDAO {
 
     @Override
     public void save(NotMemberVO notMember) {
-        String sql = "INSERT INTO not_member (mbti, nickname, gender, zodiac) VALUES (?, ?, ?, ?)";
-        jdbcTemplate.update(sql, notMember.getMbti(), notMember.getNickname(), notMember.getGender(), notMember.getZodiac());
+        String sql = "INSERT INTO not_member (mbti, nickname, gender, ani) VALUES (?, ?, ?, ?)";
+        jdbcTemplate.update(sql, notMember.getMbti(), notMember.getNickname(), notMember.getGender(), notMember.getAni());
     }
 }

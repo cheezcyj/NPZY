@@ -4,7 +4,7 @@ public class NotMemberVO {
     private String mbti;
     private String nickname;
     private String gender;
-    private String zodiac;
+    private String ani;
 
     // Getter and Setter methods
 
@@ -32,17 +32,17 @@ public class NotMemberVO {
         this.gender = gender;
     }
 
-    public String getZodiac() {
-        return zodiac;
+    public String getAni() {
+        return ani;
     }
 
-    public void setZodiac(String zodiac) {
-        this.zodiac = zodiac;
+    public void setAni(String ani) {
+        this.ani = ani;
     }
 
 	@Override
 	public String toString() {
-		return "NotMemberVO [mbti=" + mbti + ", nickname=" + nickname + ", gender=" + gender + ", zodiac=" + zodiac
+		return "NotMemberVO [mbti=" + mbti + ", nickname=" + nickname + ", gender=" + gender + ", ani=" + ani
 				+ "]";
 	}
     
