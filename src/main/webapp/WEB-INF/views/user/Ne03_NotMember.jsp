@@ -4,6 +4,29 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <script>
+    function submitForm() {
+        var mbti = document.getElementById("mbti").value;
+        var nickname = document.getElementById("nickname").value;
+        var gender = document.querySelector('input[name="gender"]:checked').value;
+        var zodiac = document.getElementById("zodiac").value;
+
+        if (mbti === "" || nickname === "" || gender === "" || zodiac === "") {
+            alert("입력되지 않은 정보가 있습니다. 모든 항목을 입력해주세요.");
+            return false;
+        }
+
+        var result = confirm("입력한 정보를 전송하시겠습니까?");
+        if (result) {
+            // 정보 전송을 위한 AJAX 요청 등의 처리
+            return true;
+        } else {
+            return false;
+        }
+    }
+</script>
+    
     <style id="fullpage_styles">
         @font-face {
             font-family: 'Cafe24Dongdong';
