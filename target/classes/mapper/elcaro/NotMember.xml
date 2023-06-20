@@ -4,7 +4,7 @@
     "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.pcwk.ehr">
 
-    <insert id="saveNotMemberInfo" parameterType="com/pcwk/ehr/NotMember/NotMemberVO">
+    <insert id="saveNotMemberInfo" parameterType="NotMemberVO">
         INSERT INTO not_member (mbti, nickname, gender, zodiac)
         VALUES (#{mbti}, #{nickname}, #{gender}, #{zodiac})
     </insert>

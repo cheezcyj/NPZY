@@ -39,4 +39,11 @@ public class NotMemberVO {
     public void setZodiac(String zodiac) {
         this.zodiac = zodiac;
     }
+
+	@Override
+	public String toString() {
+		return "NotMemberVO [mbti=" + mbti + ", nickname=" + nickname + ", gender=" + gender + ", zodiac=" + zodiac
+				+ "]";
+	}
+    
 }
