@@ -1,24 +1,15 @@
 package com.pcwk.ehr.user.dao;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
-import javax.sql.DataSource;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
-import com.pcwk.ehr.user.domain.Level;
 import com.pcwk.ehr.user.domain.UserVO;
 
 @Repository
@@ -146,7 +137,7 @@ public class UserDaoImpl implements UserDao {
 		LOG.debug("----------------------------");
 		LOG.debug("2. param=\n"+user.toString());
 		flag = this.sqlSessionTemplate.insert(statement, user);
-		LOG.debug("3. flag="+flag);		
+		LOG.debug("3. flag="+flag);		c
 			
 		return flag;
 		

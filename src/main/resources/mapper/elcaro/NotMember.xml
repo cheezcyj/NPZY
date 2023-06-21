@@ -5,8 +5,8 @@
 <mapper namespace="com.pcwk.ehr">
 
     <insert id="saveNotMemberInfo" parameterType="NotMemberVO">
-        INSERT INTO not_member (mbti, nickname, gender, zodiac)
-        VALUES (#{mbti}, #{nickname}, #{gender}, #{zodiac})
+        INSERT INTO not_member (mbti, nickname, gender, ani)
+        VALUES (#{mbti}, #{nickname}, #{gender}, #{ani})
     </insert>
 
 </mapper>
