@@ -4,9 +4,9 @@
     "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.pcwk.ehr">
 
-    <insert id="saveNotMemberInfo" parameterType="NotMemberVO">
-        INSERT INTO not_member (mbti, nickname, gender, ani)
-        VALUES (#{mbti}, #{nickname}, #{gender}, #{ani})
-    </insert>
+    <select id="notMemberInsert" parameterType="notMemberVO">
+        INSERT INTO account_tb(mbti, nickname, gender, ani)
+        values (#{mbti}, #{nickname}, #{gender}, #{ani})
+    </select>
 
 </mapper>
