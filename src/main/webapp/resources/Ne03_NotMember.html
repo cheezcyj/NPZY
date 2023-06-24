@@ -142,6 +142,17 @@ margin: 4px 2px;
 	    } else {
 	        return false;
 	    }
+	    
+	      // 입력한 값을 로컬 스토리지에 저장
+	      var mbti = document.getElementById("mbti").value;
+	      var nickname = document.getElementById("nickname").value;
+	      var gender = document.querySelector('input[name="gender"]:checked').value;
+	      var ani = document.getElementById("ani").value;
+
+	      localStorage.setItem("mbti", mbti);
+	      localStorage.setItem("nickname", nickname);
+	      localStorage.setItem("gender", gender);
+	      localStorage.setItem("ani", ani);
 	}
   </script>
 </body>
