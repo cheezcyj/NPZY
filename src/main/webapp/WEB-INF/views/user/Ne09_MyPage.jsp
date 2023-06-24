@@ -77,7 +77,7 @@
 <body>
 <div class="wrapper">
     <div class="box">
-        <span id="username"></span>님 안녕하세요
+        <span id="username"></span>님 안녕하세요 
     </div>
 </div>
 <div>
@@ -85,7 +85,7 @@
     <p>Check your luck!</p>
 </div>
 <button class="w-btn-outline w-btn-yellow-outline" type="button"
-        onclick="location.href='Ne10_ResultUrl.html'">
+        onclick="location.href='/ehr/ELCARO/resultSelect.do'">
     이전 운세 확인
 </button>
 <button class="w-btn-outline w-btn-yellow-outline" type="button"
@@ -97,7 +97,7 @@
 </div>
 <script>
     // 데이터베이스에서 이름 가져오기
-    var username = "MJ"; // 예시 이름, 실제로는 데이터베이스에서 가져온 값을 사용하세요.
+    var username = "${sessionScope.niName}"; // 예시 이름, 실제로는 데이터베이스에서 가져온 값을 사용하세요.
 
     // HTML 요소에 동적으로 이름 삽입
     var usernameElement = document.getElementById("username");
