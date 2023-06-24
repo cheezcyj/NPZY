@@ -6,53 +6,6 @@
     <meta charset="UTF-8">
     <title>tab</title>
     <style>
-        /*햄버거 버튼*/
-        body {
-            background-color: #333;
-            width: 500px;
-            margin: 30px auto;
-        }
-        .menu-trigger {
-            margin-right: 70px;
-            margin-bottom: 50px;
-        }
-        .menu-trigger,
-        .menu-trigger span {
-            display: inline-block;
-            transition: all .4s;
-            box-sizing: border-box;
-        }
-
-        .menu-trigger {
-            position: absolute;
-            top: 20px;
-            right: 5px;
-            width: 35px;
-            height: 30px;
-        }
-
-        .menu-trigger span {
-            position: absolute;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background-color: #fff;
-            border-radius: 4px;
-        }
-
-        .menu-trigger span:nth-of-type(1) {
-            top: 0;
-        }
-
-        .menu-trigger span:nth-of-type(2) {
-            top: 13px;
-        }
-
-        .menu-trigger span:nth-of-type(3) {
-            bottom: 0;
-        }
-        /*햄버거 버튼 end*/
-
         body {
             background-color: #EDF1D6;
             margin-top: 100px;
@@ -61,9 +14,14 @@
             text-align: center;
         }
         .container {
-            text-align: center;
+            text-align: left;     
             width: 500px;
             margin: 0 auto;
+            max-width: 70%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
 
         /*탭 스타일*/
@@ -105,16 +63,16 @@
 
         /*탭 내용*/
         .tab-content {
+            display: flex;
+            justify-content: center;
             border-radius: 4px;
             padding: 15px;
-            width: 100%;
-            height: 200px;
+            width: 700px;
+            height: auto;
             margin-top: 0px;
             font-family: 'Cafe24Dongdong';
             font-size: 24px;
             background: #E6AF2E;
-            display: flex;
-            justify-content: center;
         }
 
         @font-face {
@@ -208,28 +166,19 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-<!-- 햄버거버튼 -->
-<a class="menu-trigger" href="#">
-    <span></span>
-    <span></span>
-    <span></span>
-</a>
-<div id= "keywords">
-    <h2>낙천적이고 감성적인 설명충 원숭이</h2>
-</div><br>
 <div id= "nickname">
-    <h1>"닉네임"</h1><h2>님의 운세는</h2>
+    <h1>${outVO.nick}</h1><h2>님의 운세는</h2>
 </div><br>
 <div class="box" style="margin-bottom: 0;">
     <p>
         <img style="display: block; margin: 0 auto;"
-             src="/WEB_ME/Proj/images/esfp.png" alt="esfp" width="300" height="150" />
+             src="${outVO.mbtiSrc}" width="300" height="150" />
     </p>
 </div><br>
 <div class="box" style="margin-top: 0;">
     <p>
         <img style="display: block; margin: 0 auto;"
-             src="/WEB_ME/Proj/images/원숭이_ESFP_ESFJ_누끼.png" alt="monkey" width="300" height="300" />
+             src="${outVO.aniSrc}" width="300" height="300" />
     </p>
 </div>
 <div class="container">
@@ -241,19 +190,19 @@
         <li class="tab-link" data-tab="tab-5">투자운</li>
     </ul>
     <div id="tab-1" class="tab-content">
-        <p>고백운</p>
+        <p>${list[0].luck}</p>
     </div>
     <div id="tab-2" class="tab-content">
-        <p>데이트운</p>
+        <p>${list[1].luck}</p>
     </div>
     <div id="tab-3" class="tab-content">
-        <p>상사운</p>
+        <p>${list[2].luck}</p>
     </div>
     <div id="tab-4" class="tab-content">
-        <p>퇴사운</p>
+        <p>${list[3].luck}</p>
     </div>
     <div id="tab-5" class="tab-content">
-        <p>퇴사운</p>
+        <p>${list[4].luck}</p>
     </div>
 </div>
 <div style="text-align: center; margin-top: 20px;">
@@ -283,6 +232,28 @@
             // Handle share functionality
         });
     });
+    
+    $(document).ready(function() {
+        // ...
+
+        $('.tab-content').click(function() {
+            var tab_id = $(this).attr('data-tab');
+            $('.tab-content').removeClass('current');
+            $('.tab-content').hide();
+            $(this).addClass('current');
+            $("#" + tab_id).show();
+
+            adjustContainerWidth(); // 탭을 클릭할 때마다 너비 조정
+        });
+
+        // ...
+    });
+
+    function adjustContainerWidth() {
+        var containerWidth = $('#tab-content').width(); // 탭 콘텐츠의 너비 가져오기
+        $('.container').width(containerWidth); // .container의 너비 설정
+    }
+
 </script>
 </body>
 </html>

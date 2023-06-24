@@ -92,8 +92,7 @@
     <fieldset>
         <h1>
             <span id="username" style="font-weight: bold;"></span>님
-            <span style="font-weight: lighter;"> 어서오세요 </span>
-            
+            <span style="font-weight: lighter;"> 어서오세요</span>
         </h1>
     </fieldset>
 </div>
@@ -110,7 +109,7 @@
                 <tr>
                     <td>${vo.mbti_type}</td>
                     <td>${vo.result_date}</td>
-                    <td><a href="${vo.url}" target="_blank">${vo.url}</a></td>
+                    <td>${vo.url}</td>
                 </tr>
             </c:forEach>
         </table>
@@ -130,7 +129,7 @@
 </div>
 
 <script>
-    var nickname = "${sessionScope.niName}";
+    var nickname = "${list[0].nickname}";
 
     // HTML 요소에 동적으로 이름 삽입
     var usernameElement = document.getElementById("username");
