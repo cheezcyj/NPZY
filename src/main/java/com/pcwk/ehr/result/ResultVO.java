@@ -135,5 +135,4 @@ public class ResultVO {
 				+ mbti + ", ani=" + ani + ", gender=" + gender + ", luck_ty=" + luck_ty + ", luck=" + luck + ", nmAni="
 				+ nmAni + ", nmMbti=" + nmMbti + ", url=" + url + "]";
 	}
-
 }
