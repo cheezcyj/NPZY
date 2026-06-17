@@ -1,2 +1,2 @@
-# NEPALZZAYA
+# NPZY
 프로젝트 부분개선중
